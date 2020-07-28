@@ -2,7 +2,9 @@
 
 # Teaching
 
-Here is a place where I could write about the classes that I've taught and about my teaching philosophy.
+Curiosity and critical thinking drew me to a career in biology, and I strive to foster these two important abilities in my students by focusing on a growth mindset. I believe that the important parts of science education come in learning how to analyze and think critically, as well as to communicate the results of these processes. These skills are relevant in daily life both as a scientist and as a citizen of the world, and therefore of great importance in all biology classrooms. 
+
+[Click here](teaching_philosophy.pdf) for more about my teaching philosophy.
 
 ## Teaching Experience
 
