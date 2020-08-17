@@ -1,4 +1,4 @@
-Home | [CV](cv/cv.html) | [Publications](publications/pubs.html) | [Research](research/research.html) | [Teaching](teaching/teaching.html) | [Software](software/tools.html)
+Home | [CV](cv/cv.html) | [Publications](publications/pubs.html) | [Research](research/research.html) | [Teaching](teaching/teaching.html) | [Software](software/tools.html) | [Projects](projects/projects.html)
 
 # Jessica A. Rick
 ## PhD Candidate, Program in Ecology, [C.E. Wagner Lab](http://www.cewagnerlab.com), University of Wyoming
