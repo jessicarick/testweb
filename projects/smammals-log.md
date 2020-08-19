@@ -2,12 +2,12 @@
 
 # UHURU Small Mammal Genetics
 ## Log of Methods
-[jump to most recent](#recent)
+<center>[jump to most recent](#recent)</center>
 
-### STARTING OVER -- now with more data
-#### July 2020
+### July 2020
+#### Starting over -- now with more data
 
-Step 1: Barcode parsing
+##### Step 1: Barcode parsing
 
 * using old barcode script for 1,2,3; new barcode script for 4,5,6 \
 * took < 2 days for 1,2,3; timeout for 4,5,6 \
@@ -51,8 +51,8 @@ Number of seqs with potential MSE adapter in seq: 239013
 Seqs that were too short after removing MSE and beyond: 858
 ```
 
-#### August 2020 
-Step 2: Barcode trimming
+### August 2020 
+#####Step 2: Barcode trimming
 
 Now that I finnnnnnallllly have all of the barcodes parsed, split, and concatenated (from all the different libraries), I need to trim the reads down to 85bp to make Stacks happy. This time, I'm going to use a combo of ```fastx_toolkit``` and ```seqkit```.
 
@@ -67,7 +67,7 @@ parallel seqkit seq {} -m 85 -o ../../04-all_samples/{.}.trim.fq.gz ::: *[0-9].t
 
 Then, I moved each trimmed fastq into the appropriate species' directory. Some files are throwing an error-- maybe something went wrong with the splitting/concatenating of these? *I'll have to figure out which they are and investigate.*
 
-Step 3: Stacks workflow
+#####Step 3: Stacks workflow
 
 From here, I used the ```run_stacks.sh``` script for each population, which runs (in sequence) ```ustacks```, ```cstacks```, ```sstacks```, ```tsv2bam```, ```gstacks```, and ```populations```. Results from ```populations``` module:
 
@@ -125,6 +125,7 @@ done
 module load r
 R
 ```
+
 ```r
 AEHI <- read.table("reads_per_ind_AEHI.txt", header=F)
 colnames(AEHI) <- c("ind","reads")
@@ -202,7 +203,7 @@ Population summary statistics (more detail in populations.sumstats_summary.tsv):
   S: 18.172 samples per locus; pi: 0.21668; all/variant/polymorphic sites: 22502712/264402/206734; private alleles: 37665
   ```
   
-#### August 18, 2020 {#recent}
+### August 18, 2020 {#recent}
 
 Now, I'm working with AEHI and GERO to try and improve the Stacks results. After filtering in R, AEHI was left with 54 individuals (out of 9,286) and 9,286 SNPs; GERO had 149 individuals (out of 220) and only 5,097 SNPs. I changed the parameters in ```ustacks``` to ```-m 3 -M 5 -N 7 --model_type bounded --bound_high 0.05``` based off of some recommendations that I've seen-- we'll see how it goes! I also made it so that all individuals belong to the same population, instead of specifying C/N/S, and changed to ```-p 1 -r 0.1```.
 
@@ -218,6 +219,11 @@ Population summary statistics (more detail in populations.sumstats_summary.tsv):
   AEHI: 30.408 samples per locus; pi: 0.23675; all/variant/polymorphic sites: 4242341/60891/60891; private alleles: 0
 
 # GERO
+Removed 1243970 loci that did not pass sample/population constraints from 1510291 loci.
+Kept 266321 loci, composed of 22691428 sites; 3085 of those sites were filtered, 290762 variant sites remained.
+Mean genotyped sites per locus: 85.20bp (stderr 0.00).
 
+Population summary statistics (more detail in populations.sumstats_summary.tsv):
+  GERO: 49.406 samples per locus; pi: 0.21541; all/variant/polymorphic sites: 22691416/290762/290762; private alleles: 0
 
 ```

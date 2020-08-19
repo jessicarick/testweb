@@ -85,10 +85,12 @@
 <p><a href="https://jessicarick.github.io/testweb">Home</a> | <a href="../cv/cv.html">CV</a> | <a href="../publications/pubs.html">Publications</a> | <a href="../research/research.html">Research</a> | <a href="../teaching/teaching.html">Teaching</a> | <a href="../software/tools.html">Software</a> | <a href="../projects/projects.html">Projects</a></p>
 <h1 id="uhuru-small-mammal-genetics">UHURU Small Mammal Genetics</h1>
 <h2 id="log-of-methods">Log of Methods</h2>
-<p><a href="#recent">jump to most recent</a></p>
-<h3 id="starting-over-now-with-more-data">STARTING OVER – now with more data</h3>
-<h4 id="july-2020">July 2020</h4>
-<p>Step 1: Barcode parsing</p>
+<center>
+<a href="#recent">jump to most recent</a>
+</center>
+<h3 id="july-2020">July 2020</h3>
+<h4 id="starting-over-now-with-more-data">Starting over – now with more data</h4>
+<h5 id="step-1-barcode-parsing">Step 1: Barcode parsing</h5>
 <ul>
 <li>using old barcode script for 1,2,3; new barcode script for 4,5,6<br />
 </li>
@@ -132,8 +134,8 @@
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a><span class="ex">Bad</span> mids count: 29505980 (12.9%)</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a><span class="ex">Number</span> of seqs with potential MSE adapter in seq: 239013</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a><span class="ex">Seqs</span> that were too short after removing MSE and beyond: 858</span></code></pre></div>
-<h4 id="august-2020">August 2020</h4>
-<p>Step 2: Barcode trimming</p>
+<h3 id="august-2020">August 2020</h3>
+<p>#####Step 2: Barcode trimming</p>
 <p>Now that I finnnnnnallllly have all of the barcodes parsed, split, and concatenated (from all the different libraries), I need to trim the reads down to 85bp to make Stacks happy. This time, I’m going to use a combo of <code>fastx_toolkit</code> and <code>seqkit</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">module</span> load fastx_toolkit</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="ex">module</span> load seqkit</span>
@@ -142,7 +144,7 @@
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="ex">parallel</span> -j 16 fastx_trimmer -f 1 -l 85 -Q33 -i {} <span class="ex">-o</span> <span class="dt">{.}</span>.trim.fastq ::: *[0-9].fastq</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="ex">parallel</span> seqkit seq {} <span class="ex">-m</span> 85 -o ../../04-all_samples/<span class="dt">{.}</span>.trim.fq.gz ::: *[0-9].trim.fastq</span></code></pre></div>
 <p>Then, I moved each trimmed fastq into the appropriate species’ directory. Some files are throwing an error– maybe something went wrong with the splitting/concatenating of these? <em>I’ll have to figure out which they are and investigate.</em></p>
-<p>Step 3: Stacks workflow</p>
+<p>#####Step 3: Stacks workflow</p>
 <p>From here, I used the <code>run_stacks.sh</code> script for each population, which runs (in sequence) <code>ustacks</code>, <code>cstacks</code>, <code>sstacks</code>, <code>tsv2bam</code>, <code>gstacks</code>, and <code>populations</code>. Results from <code>populations</code> module:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">## TAHA</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">Removed</span> 171593 loci that did not pass sample/population constraints from 375129 loci.</span>
@@ -263,7 +265,7 @@
 <span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a>  <span class="ex">C</span>: 15.161 samples per locus<span class="kw">;</span> <span class="ex">pi</span>: 0.21688<span class="kw">;</span> <span class="ex">all/variant/polymorphic</span> sites: 21901957/257043/194755<span class="kw">;</span> <span class="ex">private</span> alleles: 29552</span>
 <span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>  <span class="ex">N</span>: 10.667 samples per locus<span class="kw">;</span> <span class="ex">pi</span>: 0.21309<span class="kw">;</span> <span class="ex">all/variant/polymorphic</span> sites: 22238852/260269/173990<span class="kw">;</span> <span class="ex">private</span> alleles: 21975</span>
 <span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a>  <span class="ex">S</span>: 18.172 samples per locus<span class="kw">;</span> <span class="ex">pi</span>: 0.21668<span class="kw">;</span> <span class="ex">all/variant/polymorphic</span> sites: 22502712/264402/206734<span class="kw">;</span> <span class="ex">private</span> alleles: 37665</span></code></pre></div>
-<h4 id="recent">August 18, 2020</h4>
+<h3 id="recent">August 18, 2020</h3>
 <p>Now, I’m working with AEHI and GERO to try and improve the Stacks results. After filtering in R, AEHI was left with 54 individuals (out of 9,286) and 9,286 SNPs; GERO had 149 individuals (out of 220) and only 5,097 SNPs. I changed the parameters in <code>ustacks</code> to <code>-m 3 -M 5 -N 7 --model_type bounded --bound_high 0.05</code> based off of some recommendations that I’ve seen– we’ll see how it goes! I also made it so that all individuals belong to the same population, instead of specifying C/N/S, and changed to <code>-p 1 -r 0.1</code>.</p>
 <p>Here are the results from <code>populations</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># AEHI</span></span>

@@ -1,4 +1,6 @@
+<center>
 [Home](https://jessicarick.github.io/testweb) | [CV](../cv/cv.html) | [Publications](../publications/pubs.html) | [Research](../research/research.html) | [Teaching](../teaching/teaching.html) | Software
+</center>
 
 # Software and other Tools
 
