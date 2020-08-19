@@ -1,5 +1,5 @@
 <center>
-[Home](https://jessicarick.github.io/testweb) | [CV](../cv/cv.html) | [Publications](../publications/pubs.html) | [Research](../research/research.html) | Teaching | [Software](../software/tools.html)
+[Home](https://jessicarick.github.io/testweb) | [CV](../cv/cv.html) | [Publications](../publications/pubs.html) | [Research](../research/research.html) | Teaching | [Resources](../software/tools.html) | [Projects](../projects/projects.html)
 </center>
 
 # Teaching

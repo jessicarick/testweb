@@ -1,12 +1,14 @@
-[Home](https://jessicarick.github.io/testweb) | CV | [Publications](../publications/pubs.html) | [Research](../research/research.html) | [Teaching](../teaching/teaching.html) | [Software](../software/tools.html)
+<center>
+[Home](https://jessicarick.github.io/testweb) | CV | [Publications](../publications/pubs.html) | [Research](../research/research.html) | [Teaching](../teaching/teaching.html) | [Resources](../software/tools.html) | [Projects](../projects/projects.html)
+</center>
 
 # CV - Jessica A. Rick
 
 ## Education
 
 - PhD (in progress) University of Wyoming, Laramie, WY
-- MS (2015) University of Minnesota, Duluth, MN
-- BS (2012) University of Arizona, Tucson, AZ
+- MS (2013-2015) University of Minnesota, Duluth, MN
+- BS (2008-2013) University of Arizona, Tucson, AZ
 
 ## Professional Experience
 
