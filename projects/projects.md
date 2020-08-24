@@ -1,30 +1,38 @@
+<center>
 [Home](https://jessicarick.github.io/testweb) | [CV](../cv/cv.html) | [Publications](../publications/pubs.html) | [Research](../research/research.html) | [Teaching](../teaching/teaching.html) | [Resources](../software/tools.html) | [Projects](../projects/projects.html)
+</center>
 
 # Ongoing projects
 
 ## Dissertation projects
-- [Lake Tanganyika *Lates* admixture and historical demography](lates-admix.html)
-- [Reference bias in SNP-based population genetics](refbias.html)
+<center>
+[Lake Tanganyika *Lates* admixture and historical demography](lates-admix.html) <br />
+[Reference bias in SNP-based population genetics](refbias.html)
+</center>
 
 ## Side projects and collaborations
 <centering>
 
-<div style="width: 100%; display: table; border-spacing: 10px;">
-<div class="box" style="width: 30%; display: table-cell;">
+<a href="smammals.html">
+<div class="box" style="width: 30%; margin-right: 10px">
   <img src="elru.png">
   <img class="img-top" src="elru-words.png">
 </div>
+</a>
 
-<div class="box" style="display: table-cell; width: 30%;">
+<a href="lates-popgen.html">
+<div class="box" style="width: 30%;  margin-right: 10px; margin-left: 10px;">
   <img src="lates.png">
   <img class="img-top" src="lates-words.png">
 </div>
+</a>
 
-<div class="box" style="display: table-cell; width: 30%;">
+<a href="dagaa-popgen.html">
+<div class="box" style="width: 30%;  margin-left: 10px">
   <img src="dagaa.png">
   <img class="img-top" src="dagaa-words.png">
 </div>
+</a>
 
-</div>
 
 </center>

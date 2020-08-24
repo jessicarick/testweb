@@ -233,6 +233,7 @@ p {
         height: 250px;
         position: relative;
         display: block;
+        float: left;
     }
     .box .img-top {
         display: none;
@@ -240,9 +241,11 @@ p {
         top: 0;
         left: 0;
         z-index: 99;
+        float: left;
     }
     .box:hover .img-top {
         display: block;
+        float: left;
     }
 
 .table {
@@ -254,7 +257,6 @@ p {
 .row { display:table-row; }
 
 .cell {
-  display:table-cell;
-  padding:5px;
-  background-color: gold;
+  display: table-cell;
+  padding: 5px;
 }
