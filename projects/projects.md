@@ -7,7 +7,7 @@
 ## Dissertation projects
 <center>
 [Lake Tanganyika *Lates* admixture and historical demography](lates-admix.html) <br />
-[Reference bias in SNP-based population genetics](refbias.html) <br />
+[Reference bias in SNP-based phylogenetics](refbias.html) <br />
 [Reference-quality genome sequences for two species of *Lates* fishes endemic to Lake Tanganyika](genomes.html)
 </center>
 
