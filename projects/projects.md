@@ -7,29 +7,30 @@
 ## Dissertation projects
 <center>
 [Lake Tanganyika *Lates* admixture and historical demography](lates-admix.html) <br />
-[Reference bias in SNP-based population genetics](refbias.html)
+[Reference bias in SNP-based population genetics](refbias.html) <br />
+[Reference-quality genome sequences for two species of *Lates* fishes endemic to Lake Tanganyika](genomes.html)
 </center>
 
-## Side projects and collaborations
+## Other collaborations
 <centering>
 
 <a href="smammals.html">
 <div class="box" style="width: 30%; margin-right: 10px">
-  <img src="elru.png">
+  <img src="elru.png" alt="ELRU">
   <img class="img-top" src="elru-words.png">
 </div>
 </a>
 
 <a href="lates-popgen.html">
 <div class="box" style="width: 30%;  margin-right: 10px; margin-left: 10px;">
-  <img src="lates.png">
+  <img src="lates.png" alt="Lates fishes">
   <img class="img-top" src="lates-words.png">
 </div>
 </a>
 
 <a href="dagaa-popgen.html">
 <div class="box" style="width: 30%;  margin-left: 10px">
-  <img src="dagaa.png">
+  <img src="dagaa.png" alt="Lake Tanganyika sardines">
   <img class="img-top" src="dagaa-words.png">
 </div>
 </a>
