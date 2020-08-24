@@ -7,15 +7,25 @@
 - [Reference bias in SNP-based population genetics](refbias.html)
 
 ## Side projects and collaborations
+<centering>
 
-<center>
-<div class="container">
-  <img src="elru.png" alt="ELRU" class="image" style="width:200px">
-  <div class="middle">
-    UHURU small mammal spatial population genetics
-  </div>
+<div style="width: 100%; display: table; border-spacing: 10px;">
+<div class="box" style="width: 30%; display: table-cell;">
+  <img src="elru.png">
+  <img class="img-top" src="elru-words.png">
 </div>
 
+<div class="box" style="display: table-cell; width: 30%;">
+  <img src="lates.png">
+  <img class="img-top" src="lates-words.png">
+</div>
+
+<div class="box" style="display: table-cell; width: 30%;">
+  <img src="dagaa.png">
+  <img class="img-top" src="dagaa-words.png">
+</div>
+
+</div>
 
 - [UHURU small mammmal spatial genetics](smammals.html)
 - [Lake Tanganyika *Lates* population genetics](lates-popgen.html)

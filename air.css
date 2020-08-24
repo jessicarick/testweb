@@ -208,42 +208,53 @@ p {
   text-align: left;
 }
 
-.container {
-  position: relative;
-  width: 50%;
+.card {
+        width: 250px;
+        height: 250px;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .card .img-top {
+        display: none;
+        top: 0;
+        left: 0;
+        z-index: 99;
+
+    }
+    .card:hover .img-top {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+.box {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        display: block;
+    }
+    .box .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .box:hover .img-top {
+        display: block;
+    }
+
+.table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 50px;
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
+.row { display:table-row; }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
-.howvertext {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+.cell {
+  display:table-cell;
+  padding:5px;
+  background-color: gold;
 }
