@@ -12,9 +12,17 @@ We are using the genetic data to produce an estimate of connectivity and migrati
 
 ## Current results
 
+We received the sequences from our second round of sequencing (three lanes/genetic libraries) on 7/30/20 and combined these with the sequences from the first round of sequencing (also three lanes/genetic libraries). In total, we had 1,475,927,127 raw sequencing reads, split pretty much evenly among the 6 libraries. Once these were allocated to the individuals that they came from, this resulted in an average of 1,397,346 sequencing reads across the 784 individuals who were sequenced. Individuals with fewer than 50,000 reads (60 individuals) were omitted from further analyses due to insufficient coverage.
+
+I assembled and analyzed the data in a similar manner to previous analyses, using the Stacks 2 de novo program and pipeline. In the figures below, I have plotted the number of sequencing reads vs. the number of SNPs called for each individual. Ideally, these plots would have a nice plateau (similar to a saturation curve)– we see this clearly in ELRU and TAHA, and somewhat in the others, but not as distinctly.
+
 <img src="./smammals_figs/reads_vs_loci_081620.png" alt="reads vs loci"></img> 
 
+From there, I filtered the variant sites (SNPs), and did a couple of preliminary analyses with those data. Below, I have plotted isolation-by-distance plots for each of the five species– on the left, I have plotted geographic distance vs genetic distance, and the slopes of these lines are plotted on the right. These slopes show how quickly genetic distance increases, and thus a larger βIBD value indicates greater population structure. As before, the relative magnitudes of these slopes seem to fit expectations based on the species’ biology.
+
 <img src="./smammals_figs/beta_values_081620.png" alt="betaIBD values"></img> 
+
+<img src="./smammals_figs/pop_fsts_081620.png" alt="betaIBD values"></img> 
 
 <img src="./smammals_figs/pca_missing_het_081620.png" alt="pcas and missingness"></img> 
 
